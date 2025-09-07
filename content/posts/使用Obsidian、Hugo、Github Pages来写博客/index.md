@@ -1,10 +1,11 @@
 ---
 title: "使用Obsidian、Hugo、Github Pages来写博客"
 date: 2024-10-24T13:10:30+08:00
-lastmod: 2025-09-07T18:20:31+08:00
+lastmod: 2025-09-07T21:09:46+08:00
 ---
 
-现在一般用 obsidian 来写东西，但复制到博客里面部署就有点麻烦，所幸就写了一个插件来转换。然后顺便给 hugo 换个主题啥的。于是就在部署到 Github Pages 的过程中，踩了半天坑。
+我现在一般用 obsidian 来写点东西，但写完后又要复制到博客里面，感觉就有点麻烦。想了想，所幸就写个插件来转换算了。
+并且既然都这么麻烦了，那就顺便给 hugo 换个主题啥的，然后就在 hugo 部署到 Github Pages 的过程中踩了半天坑。
 
 ## Hugo 初始化
 跟着文档一步一步来就好：[Quick start](https://gohugo.io/getting-started/quick-start/)
@@ -40,6 +41,8 @@ blowfish 配置：[入门指南 · Blowfish](https://blowfish.page/zh-cn/docs/ge
 
 ## Obsidian 插件
 也是从其他人那里得到的灵感，这个插件的主要作用就是找到 Obsidian 库里带 blog 标签的文章，然后转换成 hugo 的文件头格式，再丢到 hugo 的文章目录下。
+
+在这个过程中没有用到 mdast 之类的牛逼东西，只是用正则进行了简单的替换。
 
 插件地址：[w2tbp/obsidian-hugo-convert](https://github.com/w2tbp/obsidian-hugo-convert)
 
@@ -99,11 +102,11 @@ jobs:
 
 1. 选择代码库访问权限，是访问所有代码库，还是选定的代码库，这里我只选择了自己需要的。
 
-![](使用Obsidian、Hugo、Github%20Pages来写博客-20250907.png)
+![](images/使用Obsidian、Hugo、Github%20Pages来写博客-20250907.png)
 
 2. 选择权限，这个 token 将权限分的很细，这也是踩坑的地方。我们的 action 中需要推送代码带 gh-pages 分支，所以需要代码库的读写权限。
 
-![](使用Obsidian、Hugo、Github%20Pages来写博客-20250907%201.png)
+![](images/使用Obsidian、Hugo、Github%20Pages来写博客-20250907%201.png)
 
 这样，一个 token 就生成好了，将它复制，然后到 `用户名.github.io` 项目中选择 settings -> secrets and variables -> actions -> New repository secret 
 
@@ -127,5 +130,5 @@ git push -f origin gh-pages
 ### 配置 github pages
 在 settings -> pages 中按如下配置：
 
-![](使用Obsidian、Hugo、Github%20Pages来写博客-20250907%202.png)
+![](images/使用Obsidian、Hugo、Github%20Pages来写博客-20250907%202.png)
 
