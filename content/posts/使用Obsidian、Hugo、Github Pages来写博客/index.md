@@ -1,7 +1,7 @@
 ---
 title: "使用Obsidian、Hugo、Github Pages来写博客"
-date: 2024-10-24T13:10:30+08:00
-lastmod: 2025-09-07T21:09:46+08:00
+date: 2025-09-08T20:03:40+08:00
+lastmod: 2025-09-08T09:35:21+08:00
 ---
 
 我现在一般用 obsidian 来写点东西，但写完后又要复制到博客里面，感觉就有点麻烦。想了想，所幸就写个插件来转换算了。
@@ -91,9 +91,9 @@ jobs:
 
 ```
 
-其中，我更改了分支的名字（main -> master），并且更改了 `github_token: ${{ secrets.ACCESS_TOKEN }}`，这也是我接下来踩到的坑。
+文件直接从文档中复制而来，我只是更改了其中的一些内容。我更改了分支的名字（main -> master），并且更改了 github_token 变量名（secrets.GITHUB_TOKEN -> secrets.ACCESS_TOKEN），这也是我接下来踩到的坑。顺便提一嘴，这么改也是因为在新增代码库的 secrets 时，它提示不让以 GITHUB 开头。
 
-### acces token
+### github token
 这个 token 是 github 为了安全而做的东东：[在工作流中使用 GITHUB_TOKEN 进行身份验证 - GitHub 文档](https://docs.github.com/zh/actions/tutorials/authenticate-with-github_token) 在 github action 中，需要这个 token 来进行身份验证，操作代码库。
 
 我们在 settings -> Developer Settings -> Personal access tokens -> Fine-grained personal access tokens 中可以新建。
