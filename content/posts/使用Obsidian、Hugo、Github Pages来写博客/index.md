@@ -1,15 +1,14 @@
 ---
 title: "使用Obsidian、Hugo、Github Pages来写博客"
-date: 2025-09-08T23:58:55+08:00
-lastmod: 2025-09-08T23:59:00+08:00
+date: 2026-03-03T19:25:49+08:00
+lastmod: 2026-03-03T14:40:27+08:00
+tags: ["瞎折腾"]
 ---
 
 我现在一般用 obsidian 来写点东西，但写完后又要复制到博客里面，感觉就有点麻烦。想了想，所幸就写个插件来转换算了。
 并且既然都这么麻烦了，那就顺便给 hugo 换个主题啥的，然后就在 hugo 部署到 Github Pages 的过程中踩了半天坑。
 
 ## Hugo 初始化
-跟着文档一步一步来就好：[Quick start](https://gohugo.io/getting-started/quick-start/)
-
 我没有使用包管理器，直接在 github 上下载的 release。要注意的是，hugo 是分版本的，下载那个 extended 版本。由于我是 windows，就下载 windows-amd64。
 下载链接：[Releases · gohugoio/hugo](https://github.com/gohugoio/hugo/releases)
 
@@ -27,6 +26,10 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git theme
 echo "theme = 'ananke'" >> hugo.toml
 hugo server
 ```
+
+以上参考官方文档：[Quick start](https://gohugo.io/getting-started/quick-start/)
+
+---
 
 由于 anake 感觉不够好看，于是换成 [Blowfish](https://themes.gohugo.io/themes/blowfish/)
 安装主题后，发现它和我现有的 hugo 主题不兼容，于是下载了历史版本的 hugo
@@ -102,11 +105,11 @@ jobs:
 
 1. 选择代码库访问权限，是访问所有代码库，还是选定的代码库，这里我只选择了自己需要的。
 
-![](images/使用Obsidian、Hugo、Github%20Pages来写博客-20250907.png)
+![](images/使用Obsidian、Hugo、Github%20Pages来写博客-20250912.png)
 
 2. 选择权限，这个 token 将权限分的很细，这也是踩坑的地方。我们的 action 中需要推送代码带 gh-pages 分支，所以需要代码库的读写权限。
 
-![](images/使用Obsidian、Hugo、Github%20Pages来写博客-20250907%201.png)
+![](images/使用Obsidian、Hugo、Github%20Pages来写博客-20250912%201.png)
 
 这样，一个 token 就生成好了，将它复制，然后到 `用户名.github.io` 项目中选择 settings -> secrets and variables -> actions -> New repository secret 
 
@@ -130,5 +133,5 @@ git push -f origin gh-pages
 ### 配置 github pages
 在 settings -> pages 中按如下配置：
 
-![](images/使用Obsidian、Hugo、Github%20Pages来写博客-20250907%202.png)
+![](images/使用Obsidian、Hugo、Github%20Pages来写博客-20250912%202.png)
 
