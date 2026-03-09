@@ -1,6 +1,6 @@
 ---
 title: "使用Obsidian、Hugo、Github Pages来写博客"
-date: 2026-03-03T19:25:49+08:00
+date: 2025-09-08T23:58:55+08:00
 lastmod: 2026-03-03T14:40:27+08:00
 tags: ["瞎折腾"]
 ---
