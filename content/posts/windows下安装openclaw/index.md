@@ -2,6 +2,7 @@
 title: "windows下安装openclaw"
 date: 2026-03-09T04:55:03+08:00
 lastmod: 2026-03-09T21:34:52+08:00
+tags: ["瞎折腾"]
 ---
 
 本文分为 openclaw 的安装、配置，以及 qq 机器人三块。
