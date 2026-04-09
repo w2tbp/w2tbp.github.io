@@ -37,7 +37,7 @@ Start-Process -FilePath $exePath -ArgumentList $arguments -WindowStyle Hidden
 # Start-Process -FilePath $exePath -ArgumentList $arguments -WindowStyle Hidden -Wait
 ```
 
-设置脚本开机自启：[PowerShell](PowerShell.md)
+设置脚本开机自启：[设置PowerShell脚本开机执行](https://w2tbp.github.io/posts/设置PowerShell脚本开机执行)
 
 来源：
 - [PowerShell 实际应用 | 菜鸟教程](https://www.runoob.com/powershell/powershell-practice.html)
